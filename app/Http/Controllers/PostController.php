@@ -34,7 +34,7 @@ class PostController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -42,7 +42,7 @@ class PostController extends Controller
            'title'=>$request->title,
            'body'=>$request->body,
         ]);
-        return response('تم حفظ البيانات بنجاح');
+        return redirect()->route('posts.index');
     }
 
     /**
