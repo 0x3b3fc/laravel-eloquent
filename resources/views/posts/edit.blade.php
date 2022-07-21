@@ -11,7 +11,23 @@
     <title>Eloquent - Laravel</title>
 </head>
 <body>
-<h1>Edit</h1>
+<div class="container">
+    <div class="row">
+        <h3>Edit Post: {{ $post->title }}</h3>
+        <form method="post" action="{{ route('posts.update',$post->id) }}">
+            @csrf
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{ $post->title }}" aria-describedby="title">
+            </div>
+            <div class="mb-3">
+                <label for="body" class="form-label">Body</label>
+                <textarea name="body" id="body" class="form-control" cols="30" rows="10">{{ $post->body }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Post</button>
+        </form>
+    </div>
+</div>
 
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
