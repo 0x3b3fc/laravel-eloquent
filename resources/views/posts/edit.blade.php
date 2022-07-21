@@ -16,6 +16,7 @@
         <h3>Edit Post: {{ $post->title }}</h3>
         <form method="post" action="{{ route('posts.update',$post->id) }}">
             @csrf
+            @method('PUT')
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" id="title" name="title" value="{{ $post->title }}" aria-describedby="title">

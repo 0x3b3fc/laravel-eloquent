@@ -73,11 +73,16 @@ class PostController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request,$id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->update([
+            'title'=>$request->title,
+            'body'=>$request->body,
+        ]);
+        return redirect()->route('posts.index');
     }
 
     /**
