@@ -32,7 +32,7 @@
                     <th scope="row">{{ $post->id }}</th>
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->body }}</td>
-                    <td><a href="{{ route('posts.edit',$post->id) }}" class="btn btn-warning">Edit</a></td>
+                    <td><a href="{{ route('posts.restore',$post->id) }}" class="btn btn-warning">Restore</a></td>
                     <td>
 
                         <form action="{{ route('posts.destroy',$post->id) }}" method="post">
