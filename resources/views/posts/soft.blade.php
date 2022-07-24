@@ -35,8 +35,7 @@
                     <td><a href="{{ route('posts.restore',$post->id) }}" class="btn btn-warning">Restore</a></td>
                     <td>
 
-                        <form action="{{ route('posts.destroy',$post->id) }}" method="post">
-                            @method('DELETE')
+                        <form action="{{ route('posts.force_delete',$post->id) }}" method="get">
                             @csrf
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>

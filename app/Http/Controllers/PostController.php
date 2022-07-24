@@ -102,4 +102,10 @@ class PostController extends Controller
         Post::withTrashed()->where('id',$id)->restore();
         return redirect()->route('posts.index');
     }
+
+    public function force_delete($id)
+    {
+        Post::withTrashed()->where('id',$id)->forceDelete();
+        return redirect()->back();
+    }
 }
